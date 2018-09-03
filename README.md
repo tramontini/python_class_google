@@ -1,2 +1,2 @@
-# python_class_google
-Repo to save the exercises from &lt;a href="https://developers.google.com/edu/python/"> Google Python Class &lt;/a>. To review some of the python concepts.
+# Python Class Google
+Repo to save the exercises from <a href="https://developers.google.com/edu/python/"> Google Python Class </a>. To review some of the python concepts.
