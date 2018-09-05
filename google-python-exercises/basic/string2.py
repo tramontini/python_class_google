@@ -35,18 +35,13 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-  if (s.find('not') > 0):
-    not_index = s.find('not')
-    bad_index = s.find('bad')
-    if (bad_index > not_index):
-      whole_words = s[not_index:bad_index + 2]
-      new_words = whole_words.replace(whole_words, 'good')
+  
+  b = s.find('bad')
+  n = s.find('not')
 
-      return s[:not_index] + new_words + s[bad_index + 2]
-    else:
-      return s    
-  else:
-    return s
+  if b != -1 and n != -1 and b > n:
+    s = s[:n] + 'good' + s[b+3:]
+  return s
 
 # F. front_back
 # Consider dividing a string into two halves.
@@ -56,8 +51,22 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-  # +++your code here+++
-  return
+
+  if len(a)%2 == 0:
+    frontA = a[:len(a)/2]
+    backA  = a[len(a)/2:]
+  else:
+    frontA = a[:(len(a)/2)+1]
+    backA  = a[len(a)/2+1:]
+
+  if len(b)%2 == 0:
+    frontB = b[:len(b)/2]
+    backB  = b[len(b)/2:]
+  else:
+    frontB = b[:(len(b)/2)+1]
+    backB  = b[len(b)/2+1:]
+
+  return frontA + frontB + backA + backB
 
 
 # Simple provided test() function used in main() to print
